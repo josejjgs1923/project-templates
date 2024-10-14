@@ -12,4 +12,13 @@ HELP
 	exit "$1"
 }
 
-[ -n "${_ayuda:+1}" ] && ayuda 0
+# -- PARSE OPTIONS --
+while getopts opt; do
+	case "$opt" in
+
+		h) ayuda  0 ;;
+		\?) ayuda 1 ;;
+	esac
+done
+shift $(( OPTIND-1 ))
+
