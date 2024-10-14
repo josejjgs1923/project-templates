@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-MODULOS=~/programacion/modulos/sh
+DIR_SCRIPT="${0:A:h}"
+MODULOS="$DIR_SCRIPT/modulos"
 . $MODULOS/funciones_error.sh
 
 ayuda() {
@@ -9,11 +10,6 @@ ayuda() {
 HELP
 	exit "$1"
 }
-
-error(){
-  echo "$1" 1>&2 && exit 1
-}
-
 
 zparseopts -F -E -D h=_ayuda -help=_ayuda || ayuda 1
 
