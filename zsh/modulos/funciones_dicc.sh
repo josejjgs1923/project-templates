@@ -20,6 +20,9 @@ eliminar_entrada()
 
   [[ -z "$dicc" ]] && return 1
   [[ -z "$llave" ]] && return 1
+  prueba="${${(P)dicc}[$llave]}"
+
+  [[ -z "$prueba" ]] && return 1
 
   unset "${dicc}[${llave}]"
 }
