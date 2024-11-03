@@ -45,7 +45,7 @@ iterar_llaves()
   [[ -z "$fun" ]] && return 1
 
 
-  for llave in "${(kP)dicc}"
+  for llave in ${(kP)dicc}
   do
     $fun "$llave" 
   done
@@ -56,7 +56,7 @@ iterar_valores()
   dicc="$1"
   fun="$2"
 
-  for valor in "${(vP)dicc}"
+  for valor in ${(vP)dicc}
   do
     $fun "$valor" 
   done
@@ -67,7 +67,7 @@ iterar_items()
   dicc="$1"
   fun="$2"
 
-  for llave valor in "${(kvP)dicc}"
+  for llave valor in ${(kvP)dicc}
   do
     $fun "$llave" "$valor" 
   done
